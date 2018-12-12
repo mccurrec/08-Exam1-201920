@@ -3,8 +3,8 @@ Exam 1, problem 4.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Ezrie McCurry.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -73,6 +73,32 @@ def problem4(number_of_stairs, step_size, starting_point, window):
     # IMPORTANT: For PARTIAL CREDIT, you can draw just the black "bottoms"
     #            of the stair steps.
     # -------------------------------------------------------------------------
+    starting_point.attach_to(window)
+    vert_line_start_x = starting_point.x
+    vert_line_start_y = starting_point.y
+    horiz_line_start_x = starting_point.x
+    horiz_line_start_y = starting_point.y - step_size
+    for _ in range(number_of_stairs):
+        vert_line_start = rg.Point(vert_line_start_x, vert_line_start_y)
+        vert_line_end = rg.Point(vert_line_start_x, vert_line_start_y - step_size)
+        vert_line = rg.Line(vert_line_start, vert_line_end)
+        vert_line.color = 'magenta'
+        vert_line.thickness = 3
+        vert_line.attach_to(window)
+        horiz_line_start = rg.Point(horiz_line_start_x, horiz_line_start_y)
+        horiz_line_end = rg.Point(horiz_line_start_x + step_size, horiz_line_start.y)
+        horiz_line = rg.Line(horiz_line_start, horiz_line_end)
+        horiz_line.thickness = 3
+        horiz_line.attach_to(window)
+        vert_line_start_x = vert_line_start_x + step_size
+        vert_line_start_y = vert_line_start_y - step_size
+        horiz_line_start_x = horiz_line_start_x + step_size
+        horiz_line_start_y = horiz_line_start_y - step_size
+    end_point = rg.Point(vert_line_start_x, vert_line_start_y)
+    end_point.attach_to(window)
+    window.render()
+
+
 
 
 # -----------------------------------------------------------------------------
