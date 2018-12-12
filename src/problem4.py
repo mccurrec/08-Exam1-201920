@@ -68,7 +68,7 @@ def problem4(number_of_stairs, step_size, starting_point, window):
       :type window:            rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # IMPORTANT: For PARTIAL CREDIT, you can draw just the black "bottoms"
     #            of the stair steps.
